@@ -1,0 +1,59 @@
+<!--
+  Generated template for the Repos page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+ 
+    <ion-title>
+      Repos
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+<ion-item *ngFor="let repo of repos" full>
+	<!--<ion-label item-left> <b>Name :</b> <i>{{repo?.name}}</i> </ion-label>
+	<ion-label item-left> <b>Major Language :</b> <i>{{repo?.language}}</i></ion-label>-->
+	<ion-card>
+		<ion-card-content>
+			<ion-card-title>
+				{{repo?.name}}
+			</ion-card-title>
+			<p>
+			{{repo?.description}}
+			</p>
+			<p>
+			<ion-icon name="disc"></ion-icon>
+			{{repo?.language}}
+			</p>
+		</ion-card-content>
+		<ion-row>
+		<ion-col>
+			<button ion-button icon-left clear small>
+			<ion-icon name="thumbs-up"></ion-icon>
+			<div>{{repo?.forks}} Forks</div>
+			</button>
+		</ion-col>
+		<ion-col>
+			<button ion-button icon-left clear small>
+			<ion-icon name="eye"></ion-icon>
+			<div>{{repo?.watchers}} Watchers</div>
+			</button>
+		</ion-col>
+		<ion-col>
+			<button ion-button icon-left clear small>
+			<ion-icon name="star"></ion-icon>
+			<div>{{repo?.stargazers}} StarGazers</div>
+			</button>
+		</ion-col>
+		</ion-row>
+
+	</ion-card>
+</ion-item>
+</ion-content>
